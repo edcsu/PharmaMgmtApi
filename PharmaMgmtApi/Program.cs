@@ -70,4 +70,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+Seed.Initialize(app.Services.CreateScope().ServiceProvider);
+
 app.Run();
