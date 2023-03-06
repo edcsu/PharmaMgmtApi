@@ -1,6 +1,6 @@
 using System.Text.Json;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
+using PharmaMgmtApi.Commons.Middlewares;
 using PharmaMgmtApi.DbContexts;
 using PharmaMgmtApi.Helpers;
 using PharmaMgmtApi.Interfaces.Services;
