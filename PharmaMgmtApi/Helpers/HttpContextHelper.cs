@@ -2,7 +2,7 @@ namespace PharmaMgmtApi.Helpers;
 
 public class HttpContextHelper
 {
-    public static readonly IHttpContextAccessor Accessor = null!;
+    public static IHttpContextAccessor Accessor = null!;
     public static HttpResponse Response => Accessor.HttpContext?.Response;
     public static HttpRequest Request => Accessor.HttpContext?.Request;
     public static IHeaderDictionary ResponseHeaders => Response.Headers;
