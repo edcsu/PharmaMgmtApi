@@ -1,6 +1,7 @@
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using PharmaMgmtApi.Commons.Middlewares;
+using PharmaMgmtApi.Configurations;
 using PharmaMgmtApi.DbContexts;
 using PharmaMgmtApi.Helpers;
 using PharmaMgmtApi.Interfaces.Services;
@@ -18,10 +19,10 @@ builder.Services.AddDbContext<AppDbContext>(option =>
     option.UseQueryTrackingBehavior(QueryTrackingBehavior.TrackAll);
 });
 
-builder.Services.AddControllers();
+// builder.Services.ConfigureJwtAuthorize(builder.Configuration);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.ConfigureSwaggerAuthorize(builder.Configuration);
 
 builder.Services.AddCors(cors =>
 {
